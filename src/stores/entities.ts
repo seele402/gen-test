@@ -37,7 +37,7 @@ export const useEntitiesStore = defineStore('entity', () => {
   ]);
 
   const isDisabled = computed(() => {
-    if (selectedOption.value === null) return true;
+    if (selectedOption.value.description === undefined) return true;
     return false;  
   });
 
