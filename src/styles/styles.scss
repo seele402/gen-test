@@ -1,0 +1,19 @@
+@import './variables.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
