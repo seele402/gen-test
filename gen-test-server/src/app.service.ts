@@ -1,17 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { AxiosResponse } from 'axios';
-import { CreateEntityType } from './utils/types';
-
-interface TokenResponse {
-  access_token: string;
-  base_domain: string;
-}
-
-interface PostResponse {
-  id: number;
-  request_id: string;
-}
+import { CreateEntityType, PostResponse, TokenResponse } from './utils/types';
 
 @Injectable()
 export class AppService {
