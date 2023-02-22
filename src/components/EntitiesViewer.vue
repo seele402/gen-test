@@ -24,6 +24,7 @@ const entitiesStore = useEntitiesStore();
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 .viewer-container::-webkit-scrollbar {
   display: none;
 }

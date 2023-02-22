@@ -3,7 +3,6 @@ import { defineStore } from 'pinia';
 import type { Option } from '@/types/Option';
 import type { Entity } from '@/types/Entity';
 import type { AuthResponse } from '@/types/AuthResponse';
-import type { PostRequest } from '@/types/PostRequest';
 import { addEntity, getAPIToken } from '@/api/CRMApi';
 import type { PostResponse } from '@/types/PostResponse';
 
@@ -21,14 +20,17 @@ export const useEntitiesStore = defineStore('entity', () => {
   };
 
   const createEntity = async () => {
-    postResponse.value = await addEntity(authResponse.value.access_token, 
+    postResponse.value = await addEntity(
+      authResponse.value.access_token, 
       authResponse.value.base_domain,
-      selectedOption.value.routing);
-    const newEntity = <Entity>({id: postResponse.value._embedded[selectedOption.value.routing][0].id, name: selectedOption.value.description});
+      selectedOption.value.routing
+    );
+    const newEntity = <Entity>({
+      id: postResponse.value._embedded[selectedOption.value.routing][0].id, 
+      name: selectedOption.value.description
+    });
     entities.value.push(newEntity);
   }
-
-  const postRequest = ref(<PostRequest>({}));
 
   const options = <Option[]>([ 
   {id: 0, description: 'Сделка', routing: 'leads'}, 
@@ -45,7 +47,6 @@ export const useEntitiesStore = defineStore('entity', () => {
     options,
     entities, 
     isDisabled,
-    postRequest,
     authResponse,
     postResponse,
     authenticate,

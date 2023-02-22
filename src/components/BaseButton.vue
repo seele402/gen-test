@@ -12,7 +12,6 @@ import { useEntitiesStore } from '../stores/entities';
 
 const entitiesStore = useEntitiesStore();
 
-
 const props = defineProps<{
   buttonText: string,
   isLoading: boolean,
@@ -36,6 +35,7 @@ const props = defineProps<{
     border: 0.5px solid rgba(0, 0, 0, 0.11);
   }
 }
+
 .preloader-spinner {
   height: 16px;
   width: 18px;

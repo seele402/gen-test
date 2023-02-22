@@ -26,7 +26,7 @@ const createEntity = async () => {
 
 onMounted(async () => {
   await entitiesStore.authenticate()
-})
+});
 </script>
 
 <style scoped lang="scss">
